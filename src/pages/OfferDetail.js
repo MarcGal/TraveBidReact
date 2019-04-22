@@ -5,6 +5,7 @@ import CreateBid from "../components/CreateBid";
 import EditBid from "../components/EditBid";
 import offer from '../lib/offer-service';
 import bid from '../lib/bid-service';
+import Map from "../components/Map";
 
 
 
@@ -133,6 +134,7 @@ class OfferDetail extends Component {
             </div>
           )
         })}
+        <Map/>
         { currentUser !== offerOwner? <button onClick={this.renderBidForm}>Bid</button> : <div></div> }
         {showBidForm ?  < CreateBid offerID={offerID} getBids={()=> this.getBids()}/> : <div></div>}
       </div>
