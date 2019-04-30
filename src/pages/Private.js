@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import Offers from "../components/Offers";
 import SearchOffers from "../components/SearchOffers";
 import offer from '../lib/offer-service';
+import Maps3 from "../components/Maps3";
 
 
 class Private extends Component {
@@ -36,6 +37,7 @@ class Private extends Component {
         <h1>Welcome {this.props.user.username}</h1>
         <SearchOffers/>
         <Offers />
+        <Maps3 />
       </div>
     );
   }
