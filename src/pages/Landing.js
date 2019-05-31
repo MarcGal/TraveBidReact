@@ -25,6 +25,11 @@ const Title = styled.h1`
  color: white;
 `;
 
+const HeaderTextContainer = styled.div`
+  text-align: center;
+  color: white;
+`;
+
 
 const Button = styled.button`
   color: white;
@@ -52,7 +57,10 @@ class Landing extends Component {
   render() {
     return (
      <LandingBack>
-       <Title>TravelBID</Title>
+       <HeaderTextContainer>
+        <Title>TravelBID</Title>
+        <p>Traveling on your own terms has never been easier</p>
+       </HeaderTextContainer>
        <Button><Link style={{color: "white"}} to={"/login"}> Login </Link></Button>
        <Signup>Not a member yet?<Link to={"/signup"}> Signup</Link></Signup>
      </LandingBack>
