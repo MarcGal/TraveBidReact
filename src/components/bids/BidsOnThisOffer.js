@@ -3,6 +3,7 @@ import { withAuth } from "../../lib/AuthProvider";
 import CreateBid from "../bids/CreateBid";
 import bid from '../../lib/bid-service';
 import BidsOnMap from "../bids/BidsOnMap"
+import BidsOnOfferCard from "../bids/BidsOnOfferCard"
 import styled from 'styled-components';
 import '../../stylesheets/styles.css'
 import { Link } from "react-router-dom";
@@ -203,6 +204,7 @@ class BidsOnThisOffer extends Component {
           {bids.map((bid)=>{
             return (
               <BidCarouselItem status={ bid.Status } key={bid._id}>
+                <BidsOnOfferCard bid={bid} declineBid={this.declineBid} acceptBid={this.acceptBid} />
                 <ItemSections>
                   <Link to = {`/bid/${bid._id}`} >
                   <RoomImageContainer>

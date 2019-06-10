@@ -5,7 +5,6 @@ import Offers from "../components/offers/Offers";
 import Bids from "../components/bids/Bids";
 import OfferSearchResults from "../components/offers/OfferSearchResults";
 import offer from '../lib/offer-service';
-import socketIO from 'socket.io-client';
 
 class Private extends Component {
   state = {
@@ -13,15 +12,6 @@ class Private extends Component {
     showSearchResults: false,
     response:'',
   }
-
-  componentDidMount () {
-    const socket = socketIO(process.env.REACT_APP_URL);
-    socket.emit('greet', data => {console.log(data)});
-    socket.on('greet', data => {console.log(data)});
-    socket.emit('my other event', { my: 'data' }, data => {console.log(data)} );
-    // socket.on("outgoing data", data => this.setState({response: data}));
-  }
-
 
   handleShowSearchResults = async (e) => {
     await this.search()
